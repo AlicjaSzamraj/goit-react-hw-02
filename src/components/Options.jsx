@@ -1,5 +1,6 @@
 import React from "react";
 
+const Options = ({ updateFeedback }) => {
   return (
     <div>
       <button onClick={() => updateFeedback("good")}>Good</button>
@@ -7,5 +8,6 @@ import React from "react";
       <button onClick={() => updateFeedback("bad")}>Bad</button>
     </div>
   );
+};
 
 export default Options;
