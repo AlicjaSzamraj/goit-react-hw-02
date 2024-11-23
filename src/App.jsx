@@ -37,7 +37,7 @@ const App = () => {
     totalFeedback > 0 ? Math.round((feedback.good / totalFeedback) * 100) : 0;
   return (
     <div>
-      <Description />
+            <Description />
       <Options
         updateFeedback={updateFeedback}
         resetFeedback={resetFeedback}
