@@ -5,7 +5,11 @@ import Feedback from "./components/Feedback";
 import Notification from "./components/Notification";
 
 const App = () => {
-  const [feedback, setFeedback] = useState({ good: 0, neutral: 0, bad: 0 });
+  const [feedback, setFeedback] = useState({
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  });
   useEffect(() => {
     const savedFeedback = JSON.parse(localStorage.getItem("feedback"));
     if (savedFeedback) {
@@ -22,20 +26,23 @@ const App = () => {
     }));
   };
   const resetFeedback = () => {
-    setFeedback({ good: 0, neutral: 0, bad: 0 });
+    setFeedback({
+      good: 0,
+      neutral: 0,
+      bad: 0,
+    });
   };
   const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
   const positivePercentage =
     totalFeedback > 0 ? Math.round((feedback.good / totalFeedback) * 100) : 0;
   return (
     <div>
-      {" "}
-      <Description />{" "}
+      <Description />
       <Options
         updateFeedback={updateFeedback}
         resetFeedback={resetFeedback}
         totalFeedback={totalFeedback}
-      />{" "}
+      />
       {totalFeedback > 0 ? (
         <Feedback
           feedback={feedback}
@@ -44,7 +51,7 @@ const App = () => {
         />
       ) : (
         <Notification />
-      )}{" "}
+      )}
     </div>
   );
 };
